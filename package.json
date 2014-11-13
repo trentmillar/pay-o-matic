@@ -1,0 +1,54 @@
+{
+  "name": "pay-o-matic",
+  "version": "0.1.0",
+  "description": "Wrapper for multiple payment gateway APIs. So far just Stripe, more to come.",
+  "main": "lib/payomatic.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trentmillar/pay-o-matic.git"
+  },
+  "keywords": [
+    "payment",
+    "processing",
+    "gateway",
+    "api",
+    "stripe",
+    "wrapper",
+    "mediator",
+    "paypal",
+    "braintree",
+    "authorize.net",
+	"chargify"	
+  ],
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Trent Millar"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/trentmillar/pay-o-matic/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "stripe": "2.8.0",
+	"underscore": "1.7.0",
+	"dotenv": "0.4.0"
+  },
+  "devDependencies": {
+    "mocha": "2.0.1",
+    "should": "4.2.0",
+	"when": "3.5.2"
+  },
+  "readme": "# pay-o-matic\nA unified facade to multiple payment gateways. What pay-o-matic will do is allow one or more processing gateways to be configured, allowing round-robining, fail-over, or whatever prioritization you want. Currently contains the Stripe API but will include others as I incorporate them.\n",
+  "bugs": {
+    "url": "https://github.com/trentmillar/pay-o-matic/issues"
+  },
+  "homepage": "https://github.com/trentmillar/pay-o-matic"
+}
