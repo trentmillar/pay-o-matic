@@ -2,7 +2,7 @@
   "name": "pay-o-matic",
   "version": "0.1.0",
   "description": "Wrapper for multiple payment gateway APIs. So far just Stripe, more to come.",
-  "main": "lib/payomatic.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
@@ -43,8 +43,7 @@
   },
   "devDependencies": {
     "mocha": "2.0.1",
-    "should": "4.2.0",
-	"when": "3.5.2"
+    "should": "4.2.0"
   },
   "readme": "# pay-o-matic\nA unified facade to multiple payment gateways. What pay-o-matic will do is allow one or more processing gateways to be configured, allowing round-robining, fail-over, or whatever prioritization you want. Currently contains the Stripe API but will include others as I incorporate them.\n",
   "bugs": {
