@@ -205,5 +205,39 @@ describe('Processor tests', function () {
         });
     });
 
+
+    it('create then, add a card, then charge with capture, then refund, then delete new stripe customer', function (done) {
+
+        var stripe = payomatic.mediator.processors['stripe'];
+
+        var customer = new payomatic.Types.Customer(stripeCustomerResponse);
+        var card = new payomatic.Types.Card(stripeCardReq);
+        var charge = new payomatic.Types.Charge(stripeCharge);
+        var refund = new payomatic.Types.Refund();
+
+        stripe.createCustomer(customer, function (err, cust) {
+
+            stripe.createCard(cust, card, function (err, card) {
+
+                stripe.createCharge_Capture(charge, card, cust, function (err, charge) {
+
+                    stripe.createRefund_Full(refund, charge, function (err, refund) {
+
+                        stripe.deleteCard(cust.id, card.id, function (err, confirmation) {
+
+                            stripe.deleteCustomer(cust.id, function (err, confirmation) {
+
+                                done();
+
+                            });
+
+                        });
+                    });
+                });
+            });
+
+        });
+    });
+
     
 });
