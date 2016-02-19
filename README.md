@@ -13,7 +13,11 @@ A unified facade to multiple payment gateways using a common interface. What pay
 	
 	var payomatic = require('pay-o-matic');	
 		
-	
+Make sure you have a .env file or add the your PATH and set the following to use Stripe
+
+	STRIPE_API_KEY=pk_test_4123432454356
+	STRIPE_ENABLED=true
+    
 ## Tests
 
 	mocha test/*.js
